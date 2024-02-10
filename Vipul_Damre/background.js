@@ -1,12 +1,12 @@
 chrome.tabs.onUpdated.addListener((tabId, tab) => {
-    if(tab.url && tab.url.incluedes('youtube.com/watch')){
+    if (tab.url && tab.url.incluedes('youtube.com/watch')) {
 
 
         // queryParameters is unique id for each video 
         const queryParameters = tab.url.split('?')[1];
         console.log(queryParameters);
 
-        
+
         // URLSearchParams() returns the object which have parameters of url for better useability without using direct url 
         const urlParameters = new URLSearchParams(queryParameters)
         console.log(urlParameters);
