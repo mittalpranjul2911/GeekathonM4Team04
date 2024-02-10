@@ -24,9 +24,9 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
 
 
 
-// const queryParameters = 'https://www.youtube.com/watch?v=0n809nd4Zu4&ab_channel=freeCodeCamp.org'
-// const urlParameters = new URLSearchParams(queryParameters)
-//         console.log(urlParameters);
+const queryParameters = 'https://www.youtube.com/watch?v=0n809nd4Zu4&ab_channel=freeCodeCamp.org'
+const urlParameters = new URLSearchParams(queryParameters)
+        console.log(urlParameters);
 
 
-// console.log(urlParameters.get('v'));
+console.log(urlParameters.get('v'));
