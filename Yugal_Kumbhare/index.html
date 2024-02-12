@@ -25,13 +25,14 @@
             <div class="template-type">
                 <h4 class="template-type-name">Template Type</h4>
                 <select name="" id="select_two_items" >
-                    <option value="">Two-Column</option>
-                    <option value="">Minimalist </option>
+                    <!-- <option value="Zero" selected>Select Option</option> -->
+                    <option value="Two">Two-Column</option>
+                    <option value="One">Minimalist </option>
                 </select><br><br>
                 <label for="" class="header_color">Header Color</label><br>
-                <input type="color" name="" id="colorid" value="#A52A2A"><br><br>
+                <input type="color" name="" class="colorid" value="#A52A2A"><br><br>
                 <label for="" class="header_text">Header-Text Color</label><br>
-                <input type="color" name="" id="textid" value="#FFFFFF"><br>
+                <input type="color" name="" class="textid" value="#FFFFFF"><br>
                 <!-- personal detail form start --><br>
                 <form action="">
                     <span class="personal_details" for="">Personal Details</span><br>
@@ -92,9 +93,75 @@
                 <!-- button section end -->
             </div>
             <!-- template-type end -->
-            
+
+            <div id="showOne" class="myDiv" style="display: none;">
+                    <!-- brown color box start -->
+                    <div class="brown_color_box">
+                        <div class="nameAndSde">
+                          <h2 class="heading1"></h2>
+                          <h4 class="heading3"></h4>
+                        </div>
+                        <div class="PhoneEmailLoca">
+                            <img src="https://cdn-icons-png.flaticon.com/128/159/159832.png" class="gap_into_detail" height="17" alt="">
+                            <span class="personal_detail_phone_data"></span><br>
+                            <img src="https://cdn-icons-png.flaticon.com/128/646/646094.png" class="gap_into_detail" height="17" alt="">
+                            <span class="personal_detail_email_data"></span><br>
+                            <img src="https://cdn-icons-png.flaticon.com/128/2875/2875433.png" class="gap_into_detail" height="17" alt="">
+                            <span class="personal_detail_country_data"></span><br>
+                        </div>
+                    </div>
+                    <!-- brown color box end -->
+    
+                    <!-- skill And Summary part start-->
+                    <div class="skillAndSummarypart">
+                        <div class="summary_back_color">
+                            <h3 class="font_size_increase">SUMMARY</h3>
+                            <hr class="summary_hr_size_increase">
+                            <div class="profeessional_textarea_data">
+                                
+                            </div>
+                            <h3 class="font_size_increase">SKILLS</h3>
+                            <hr class="skill_hr_size_increase">
+                            <div class="profressional_form_skills_data">
+    
+                            </div>
+                            <!-- PROFESSIONAL EXPERIENCE container start -->
+                            <h3 class="font_size_increase">PROFESSIONAL EXPERIENCE</h3>
+                            <hr class="summary_hr_size_increase">
+                            <div class="profess_experience_summary">
+                                <!-- <div class="flex_data">
+                                    <ul>
+                                        <li class="pasteText_job_title_employeement">SDE at Amazon</li>
+                                    </ul> 
+                                    <span>
+                                        <span id="start_Date">11-04-2023</span>
+                                        <span id="end_Date">11-04-2023</span>
+                                    </span>
+                                </div><br>
+                                <label class="pasteText_employer">SDE</label><br><br>
+                                <label class="pasteText_description_employeement">can Write Anything</label> -->
+                            </div>
+                            <!-- PROFESSIONAL EXPERIENCE container end -->
+                            <!-- project container start -->
+                            <h3 class="font_size_increase" id="projects_top">PROJECTS</h3>
+                            <hr class="summary_hr_size_increase">
+                            <div class="projects_summary">
+                                
+                            </div>
+                            <!-- project container end -->
+                            <!-- education container start -->
+                            <h3 class="font_size_increase">EDUCATION</h3>
+                            <hr class="summary_hr_size_increase">
+                            <div class="education_summary">
+                                
+                            </div>
+                            <!-- education container end -->
+                        </div>
+                    </div>
+                    <!-- skill And Summary part end-->
+            </div>
             <!-- dataOfEmployee start -->
-            <div class="dataOfEmployee">
+            <div id="showTwo" style="display: none;" class="dataOfEmployee  myDiv" >
                 <!-- brown color box start -->
                 <div class="brown_color_box">
                     <h2 class="heading1"></h2>
@@ -142,18 +209,38 @@
                             <label class="pasteText_description_employeement">can Write Anything</label> -->
                         </div>
                         <!-- PROFESSIONAL EXPERIENCE container end -->
+
                         <!-- project container start -->
                         <h3 class="font_size_increase" id="projects_top">PROJECTS</h3>
                         <hr class="summary_hr_size_increase">
                         <div class="projects_summary">
-                            
+                            <!-- <div class="flex_data">
+                                <ul>
+                                    <li class="pasteText_job_title_project">SDE at Amazon</li>
+                                </ul> 
+                                <span>
+                                    <span id="start_Date_project">11-04-2023</span>
+                                    <span id="end_Date_project">11-04-2023</span>
+                                </span>
+                            </div><br>
+                            <label class="pasteText_project">SDE</label><br><br> -->
                         </div>
                         <!-- project container end -->
                         <!-- education container start -->
                         <h3 class="font_size_increase">EDUCATION</h3>
                         <hr class="summary_hr_size_increase">
                         <div class="education_summary">
-                            
+                            <!-- <div class="flex_data">
+                                <ul>
+                                    <li class="pasteText_job_title_education">SDE at Amazon</li>
+                                </ul> 
+                                <span>
+                                    <span id="start_Date_education">11-04-2023</span>
+                                    <span id="end_Date_education">11-04-2023</span>
+                                </span>
+                            </div><br>
+                            <label class="pasteText_education">SDE</label><br><br>
+                            <label class="pasteText_description_education">can Write Anything</label> -->
                         </div>
                         <!-- education container end -->
                     </div>
@@ -164,6 +251,7 @@
         </div>
     </div>
     <!-- main container end -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>      
     <script src="./script.js"></script>
 </body>
 </html>

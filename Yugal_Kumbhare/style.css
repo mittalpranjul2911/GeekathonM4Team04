@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 body{
+    overflow-x: hidden; /* Hide horizontal scrollbar */
     font-family: sans-serif;
 }
+
 /* navbar section start */
 .navbar{
     /* border: 2px solid red; */
@@ -35,7 +37,7 @@ body{
 .two_section{
     width: 100%;
     display: flex;
-    background-color: whitesmoke;
+    background-color: rgb(237, 233, 233);
 }
 
 
@@ -63,11 +65,11 @@ body{
 .header_text{
     font-size: 14px;
 }
-#colorid{
+.colorid{
     border: none;
     margin-top: 0.3rem;
 }
-#textid{
+.textid{
     border: none;
     margin-top: 0.3rem;
 }
@@ -177,13 +179,28 @@ body{
 .profressional_form_skills_data{
     font-size: 13px;
 }
+#showOne{
+    margin-left: 200px;
+    width: 48%;
+}
+#showTwo{
+    margin-left: 200px;
+    width: 48%;
+}
 /* skill end */
 
 /* summary sec start */
-.summary_back_color{
+#showOne .summary_back_color{
     background-color: white;
     border: 1px solid green;
     width: 70%;
+    border: none;
+    padding: 1rem 0rem 0rem 1rem;
+}
+#showTwo .summary_back_color{
+    background-color: white;
+    border: 1px solid green;
+    width: 58.3%;
     border: none;
     padding: 1rem 0rem 0rem 1rem;
 }
@@ -222,11 +239,79 @@ body{
     font-size: 14px;
     margin-right: 1rem;
 }
+#showOne .brown_color_box{
+    display: flex;
+    color: #ffffff;
+    height: 100px;
+    background-color: brown;
+}
+#showOne .PhoneEmailLoca{
+    margin-left: 16rem;
+}
+#showOne .skillAndSummarypart{
+    display: flex;
+    width: 142.5%;
+}
+#showTwo .skillAndSummarypart{
+    display: flex;
+    width: 124.8%;
+}
+.skill_back_color{
+    /* border: 1px solid blue; */
+    width:20%;
+    margin:1rem 0rem 0rem 1rem
+}
 /* PROFESSIONAL EXPERIENCE container end */
 
 /* project container start */
-
+.pasteText_job_title_project{
+    margin-left: 1rem;
+    font-size: 14px;
+}
+.pasteText_project{
+    font-size: 14px;
+}
+.flex_data{
+    justify-content: space-between;
+    font-size: 14px;
+    display:flex;
+}
+#start_Date_project{
+    font-size: 14px;
+    margin-right: 1rem;
+}
+#end_Date_project{
+    font-size: 14px;
+    margin-right: 1rem;
+}
 /* project container end */
+
+/* education container start */
+.pasteText_job_title_education{
+    margin-left: 1rem;
+    font-size: 14px;
+}
+.pasteText_education{
+    font-size: 14px;
+}
+.pasteText_description_education{
+    font-size: 16px;
+}
+.flex_data{
+    justify-content: space-between;
+    font-size: 14px;
+    display:flex;
+}
+#start_Date_education{
+    font-size: 14px;
+    margin-right: 1rem;
+}
+#end_Date_education{
+    font-size: 14px;
+    margin-right: 1rem;
+}
+/* education container start */
+
 /* summary sec end */
 /* dataOfEmployee end */
 /* two section end */
@@ -342,7 +427,7 @@ body{
     width: 100%;
     border: none;
 }
-#education_descriptio{
+#education_description{
     font-size: 14px;
     background-color: white;
     border: none;
