@@ -1,16 +1,15 @@
-//generatePDF code
-// function generatePDF(){
-//     const ele = document.querySelector(".dataOfEmployee");
-//     const options = {
-//         filename: 'my-document.pdf',
-//         margin: 1,
-//         image: { type: 'jpeg', quality: 0.98 },
-//         html2canvas: { scale: 2 },
-//         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-//     };
-//     html2pdf().set(options).from(ele).save();
-// }
+// generatePDF code
+let option  = "";
 
+let selTag = document.querySelector("#select_two_items");
+selTag.addEventListener('change', (e)=>{
+   option =  e.target.value;
+});
+
+function generatePDF(){
+    const ele = document.querySelector(`#show${option}`);
+    html2pdf().from(ele).save();
+}
 
 //1. color and textcolor
 let selectColor = document.querySelector(".colorid");//console.log(selectColor);
@@ -127,18 +126,17 @@ selectProfessSkill.addEventListener('input', ()=>{
 /* add employment button start */
 let selectAddEmployment = document.querySelector(".add_employee");//console.log(selectAddEmployment);
 let selectAddEmploymentForm = document.querySelector(".add_employee_form");
-let selectProfeeExperiSummaryofshowTwo = document.querySelector(".profess_experience_summary_showTwo");
-let selectProfeeExperiSummary = document.querySelector(".profess_experience_summary");
-
+let selectProfeeExperiSummary = document.querySelectorAll(".profess_experience_summary");
+// console.log(selectProfeeExperiSummary);
 selectAddEmployment.addEventListener('click',()=>{
         
     /* first div create */
     let createAddEmploymentDiv = document.createElement('div');
     createAddEmploymentDiv.innerHTML = `
         <label>Start</label>
-        <input type="date" class="start_date_add_employee">
+        <input type="date" id="start_date_add_employee">
         <label>End</label>
-        <input type="date" class="end_date_add_employee">
+        <input type="date" id="end_date_add_employee">
         <input type="text" id="job_title_employeement" placeholder="job Title">
         <input type="text" id="employer_employeement" placeholder="Employer">
         <textarea id="employment_description" cols="40" rows="8" placeholder="Description"></textarea>`
@@ -152,87 +150,59 @@ selectAddEmployment.addEventListener('click',()=>{
                 <li class="pasteText_job_title_employeement"></li>
             </ul> 
             <span>
-                <span id="start_Date"></span>
-                <span id="end_Date"></span>
+                <span class="start_Date"></span>
+                <span class="end_Date"></span>
             </span>
         </div><br>
         <label class="pasteText_employer"></label><br><br>
         <label class="pasteText_description_employeement"></label>`
-
-        let createprofeeExperiSummDivshowTwo = document.createElement('div');
-        createprofeeExperiSummDivshowTwo.innerHTML = `
-        <div class="flex_data">
-            <ul>
-                <li class="pasteText_job_title_employeement_showTwo"></li>
-            </ul> 
-            <span>
-                <span id="start_Date_showTwo"></span>
-                <span id="end_Date_showTwo"></span>
-            </span>
-        </div><br>
-        <label class="pasteText_employer_showTwo"></label><br><br>
-        <label class="pasteText_description_employeement_showTwo"></label>`
-
-        selectProfeeExperiSummary.append(createprofeeExperiSummDiv);
-        selectProfeeExperiSummaryofshowTwo.append(createprofeeExperiSummDivshowTwo);
+        // selectProfeeExperiSummary.append(createprofeeExperiSummDiv);
+        selectProfeeExperiSummary.forEach((ele) =>{
+            let clonediv = createprofeeExperiSummDiv.cloneNode(true);
+            ele.appendChild(clonediv);
+        });
 
     /* pass values start */
-    let selectStartDateOfAddEmployee = document.querySelector(".start_date_add_employee");
-    let selectEndDateOfAddEmployee = document.querySelector(".end_date_add_employee");
+    let selectStartDateOfAddEmployee = document.querySelector("#start_date_add_employee");
+    // console.log(selectStartDateOfAddEmployee);
+    let selectEndDateOfAddEmployee = document.querySelector("#end_date_add_employee");
     let selectJobTitleValueOfEmployee = document.querySelector("#job_title_employeement");
     let selectEmployerOfEmployee = document.querySelector("#employer_employeement");
     let selectEmployeeDescription = document.querySelector("#employment_description");
 
-    // showone start
-    let selectStartDateOfProfessExperi = document.querySelector("#start_Date");
-    let selectEndDateOfProfessExperi = document.querySelector("#end_Date");
-    let selectSDEAtAmazon = document.querySelector(".pasteText_job_title_employeement");//console.log(selectSDEAtAmazonValue);
-    let selectSDE = document.querySelector(".pasteText_employer");//console.log(selectSDE);
-    let selectcanWritingAnything = document.querySelector(".pasteText_description_employeement");//console.log(selectcanWritingAnything);
+    let selectStartDateOfProfessExperi = document.querySelectorAll(".start_Date");
+    let selectEndDateOfProfessExperi = document.querySelectorAll(".end_Date");
+    let selectSDEAtAmazon = document.querySelectorAll(".pasteText_job_title_employeement");//console.log(selectSDEAtAmazonValue);
+    let selectSDE = document.querySelectorAll(".pasteText_employer");//console.log(selectSDE);
+    let selectcanWritingAnything = document.querySelectorAll(".pasteText_description_employeement");//console.log(selectcanWritingAnything);
 
-    // showtwo start
-    let selectStartDateOfProfessExperi_showTwo = document.querySelector("#start_Date_showTwo");
-    let selectEndDateOfProfessExperi_showTwo = document.querySelector("#end_Date_showTwo");
-    let selectSDEAtAmazon_showTwo = document.querySelector(".pasteText_job_title_employeement_showTwo");//console.log(selectSDEAtAmazonValue);
-    let selectSDE_showTwo = document.querySelector(".pasteText_employer_showTwo");//console.log(selectSDE);
-    let selectcanWritingAnything_showTwo = document.querySelector(".pasteText_description_employeement_showTwo");//console.log(selectcanWritingAnything);
 
-    // showone start
     selectStartDateOfAddEmployee.addEventListener('input', ()=>{
-        selectStartDateOfProfessExperi.innerHTML = selectStartDateOfAddEmployee.value;
+        selectStartDateOfProfessExperi.forEach((ele)=>{
+            ele.innerHTML = selectStartDateOfAddEmployee.value;
+        })
     });
 
-    selectEndDateOfAddEmployee.addEventListener('input',()=>{
-        selectEndDateOfProfessExperi.innerHTML = selectEndDateOfAddEmployee.value;
+    selectEndDateOfAddEmployee.addEventListener('input', ()=>{
+        selectEndDateOfProfessExperi.forEach((ele)=>{
+            ele.innerHTML = selectEndDateOfAddEmployee.value;
+        })
     });  
     selectJobTitleValueOfEmployee.addEventListener('input', ()=>{
-        selectSDEAtAmazon.innerHTML = selectJobTitleValueOfEmployee.value;
+        selectSDEAtAmazon.forEach((ele)=>{
+            ele.innerHTML = selectJobTitleValueOfEmployee.value;
+        })
     });
     selectEmployerOfEmployee.addEventListener('input', ()=>{
-        selectSDE.innerHTML = selectEmployerOfEmployee.value;
+        selectSDE.forEach((ele)=>{
+            ele.innerHTML = selectEmployerOfEmployee.value;
+        })
     });
     selectEmployeeDescription.addEventListener('input', ()=>{
-        selectcanWritingAnything.innerHTML = selectEmployeeDescription.value; 
+        selectcanWritingAnything.forEach((ele)=>{
+             ele.innerHTML = selectEmployeeDescription.value; 
+        })
     });
-    //showone end
-    // showtwo start
-    selectStartDateOfAddEmployee.addEventListener('input', ()=>{
-        selectStartDateOfProfessExperi_showTwo.innerHTML = selectStartDateOfAddEmployee.value;
-    });
-
-    selectEndDateOfAddEmployee.addEventListener('input',()=>{
-        selectEndDateOfProfessExperi_showTwo.innerHTML = selectEndDateOfAddEmployee.value;
-    });  
-    selectJobTitleValueOfEmployee.addEventListener('input', ()=>{
-        selectSDEAtAmazon_showTwo.innerHTML = selectJobTitleValueOfEmployee.value;
-    });
-    selectEmployerOfEmployee.addEventListener('input', ()=>{
-        selectSDE_showTwo.innerHTML = selectEmployerOfEmployee.value;
-    });
-    selectEmployeeDescription.addEventListener('input', ()=>{
-        selectcanWritingAnything_showTwo.innerHTML = selectEmployeeDescription.value; 
-    });
-    // showtwo end
     
 });
 /* add employment button end */
@@ -240,16 +210,16 @@ selectAddEmployment.addEventListener('click',()=>{
 /* add project button start */
 let selectAddProject = document.querySelector(".add_project");//console.log(selectAddEmployment);
 let selectAddProjectForm = document.querySelector(".add_project_form");
-let selectProjectSummary = document.querySelector(".projects_summary");
+let selectProjectSummary = document.querySelectorAll(".projects_summary");
 
 /* first div created */
 selectAddProject.addEventListener('click',()=>{
     let createAddProjectDiv = document.createElement('div');
     createAddProjectDiv.innerHTML = `
         <label>Start</label>
-        <input type="date" class="start_date_add_project">
+        <input type="date" id="start_date_add_project">
         <label>End</label>
-        <input type="date" class="end_date_add_project">
+        <input type="date" id="end_date_add_project">
         <input type="text" id="project_title" placeholder="Project Title">
         <textarea id="project_description" cols="40" rows="8" placeholder="Description"></textarea>`
         selectAddProjectForm.append(createAddProjectDiv);
@@ -263,40 +233,49 @@ selectAddProject.addEventListener('click',()=>{
             <li class="pasteText_job_title_project"></li>
         </ul> 
         <span>
-            <span id="start_Date_project"></span>
-            <span id="end_Date_project"></span>
+            <span class="start_Date_project"></span>
+            <span class="end_Date_project"></span>
         </span>
         </div><br>
         <label class="pasteText_project"></label><br><br>`
-        selectProjectSummary.append(createProjectSummDiv);
+        // selectProjectSummary.append(createProjectSummDiv);
+        selectProjectSummary.forEach((ele)=>{
+            let clonediv2 = createProjectSummDiv.cloneNode(true);
+            ele.appendChild(clonediv2);
+        });
 
     /* pass values start */
-    let selectStartDateOfAddProject = document.querySelector(".start_date_add_project");
-    let selectEndDateOfAddProject = document.querySelector(".end_date_add_project");
+    let selectStartDateOfAddProject = document.querySelector("#start_date_add_project");
+    let selectEndDateOfAddProject = document.querySelector("#end_date_add_project");
     let selectJobTitleValueOfProject = document.querySelector("#project_title");
     let selectProjectDescription = document.querySelector("#project_description");
 
-    let selectStartDateOfProject = document.querySelector("#start_Date_project");
-    let selectEndDateOfProject = document.querySelector("#end_Date_project");
-    let selectSDEAtAmazonProject = document.querySelector(".pasteText_job_title_project");//console.log(selectSDEAtAmazonValue);
-    let selectSDEProject = document.querySelector(".pasteText_project");//console.log(selectSDE);
+    let selectStartDateOfProject = document.querySelectorAll(".start_Date_project");
+    let selectEndDateOfProject = document.querySelectorAll(".end_Date_project");
+    let selectSDEAtAmazonProject = document.querySelectorAll(".pasteText_job_title_project");//console.log(selectSDEAtAmazonValue);
+    let selectSDEProject = document.querySelectorAll(".pasteText_project");//console.log(selectSDE);
 
 
     selectStartDateOfAddProject.addEventListener('input', ()=>{
-        selectStartDateOfProject.innerHTML = selectStartDateOfAddProject.value;
+        selectStartDateOfProject.forEach((ele)=>{
+            ele.innerHTML = selectStartDateOfAddProject.value;
+        })
     });
 
     selectEndDateOfAddProject.addEventListener('input',()=>{
-        selectEndDateOfProject.innerHTML = selectEndDateOfAddProject.value;
+        selectEndDateOfProject.forEach((ele)=>{
+            ele.innerHTML = selectEndDateOfAddProject.value;
+        })
     });  
     selectJobTitleValueOfProject.addEventListener('input', ()=>{
-        selectSDEAtAmazonProject.innerHTML = selectJobTitleValueOfProject.value;
+        selectSDEAtAmazonProject.forEach((ele)=>{
+            ele.innerHTML = selectJobTitleValueOfProject.value;
+        })
     });
-    // selectEmployerOfEmployee.addEventListener('input', ()=>{
-    //     selectSDE.innerHTML = selectEmployerOfEmployee.value;
-    // });
     selectProjectDescription.addEventListener('input', ()=>{
-        selectSDEProject.innerHTML = selectProjectDescription.value; 
+        selectSDEProject.forEach((ele)=>{
+            ele.innerHTML = selectProjectDescription.value;
+        }) 
     });
 
 });
@@ -305,16 +284,16 @@ selectAddProject.addEventListener('click',()=>{
 /* add education button start */
 let selectAddEducation = document.querySelector(".add_education");//console.log(selectAddEmployment);
 let selectAddEducationForm = document.querySelector(".add_education_form");
-let selectEducationSummary = document.querySelector(".education_summary");
+let selectEducationSummary = document.querySelectorAll(".education_summary");
 
 /* first div  */
 selectAddEducation.addEventListener('click',()=>{
     let createAddEducationDiv = document.createElement('div');
     createAddEducationDiv.innerHTML = `
         <label>Start</label>
-        <input type="date" class="start_date_add_education">
+        <input type="date" id="start_date_add_education">
         <label>End</label>
-        <input type="date" class="end_date_add_education">
+        <input type="date" id="end_date_add_education">
         <input type="text" id="education_qualification" placeholder="Qualification">
         <input type="text" id="education_school" placeholder="School/College">
         <textarea id="education_description" cols="40" rows="8" placeholder=" Description"></textarea>`
@@ -328,43 +307,57 @@ selectAddEducation.addEventListener('click',()=>{
                 <li class="pasteText_job_title_education"></li>
             </ul> 
             <span>
-                <span id="start_Date_education"></span>
-                <span id="end_Date_education"></span>
+                <span class="start_Date_education"></span>
+                <span class="end_Date_education"></span>
             </span>
         </div><br>
         <label class="pasteText_education"></label><br><br>
         <label class="pasteText_description_education"></label>`
-        selectEducationSummary.append(createEucationSummDiv);
+        // selectEducationSummary.append(createEucationSummDiv);
+        selectEducationSummary.forEach((ele)=>{
+            let clonediv3 = createEucationSummDiv.cloneNode(true);
+            ele.appendChild(clonediv3);
+        });
+
 
     /* pass values start */
-    let selectStartDateOfAddEducation = document.querySelector(".start_date_add_education");
-    let selectEndDateOfAddEducation = document.querySelector(".end_date_add_education");
+    let selectStartDateOfAddEducation = document.querySelector("#start_date_add_education");
+    let selectEndDateOfAddEducation = document.querySelector("#end_date_add_education");
     let selectJobTitleValueOfEducation = document.querySelector("#education_qualification");
     let selectEmployerOfEducation = document.querySelector("#education_school");
     let selectEducationDescription = document.querySelector("#education_description");
 
-    let selectStartDateOfEducation = document.querySelector("#start_Date_education");
-    let selectEndDateOfEducation = document.querySelector("#end_Date_education");
-    let selectSDEAtAmazonEducation = document.querySelector(".pasteText_job_title_education");//console.log(selectSDEAtAmazonValue);
-    let selectSDEEducation = document.querySelector(".pasteText_education");//console.log(selectSDE);
-    let selectcanWritingAnythingEducation = document.querySelector(".pasteText_description_education");//console.log(selectcanWritingAnything);
+    let selectStartDateOfEducation = document.querySelectorAll(".start_Date_education");
+    let selectEndDateOfEducation = document.querySelectorAll(".end_Date_education");
+    let selectSDEAtAmazonEducation = document.querySelectorAll(".pasteText_job_title_education");//console.log(selectSDEAtAmazonValue);
+    let selectSDEEducation = document.querySelectorAll(".pasteText_education");//console.log(selectSDE);
+    let selectcanWritingAnythingEducation = document.querySelectorAll(".pasteText_description_education");//console.log(selectcanWritingAnything);
 
 
     selectStartDateOfAddEducation.addEventListener('input', ()=>{
-        selectStartDateOfEducation.innerHTML = selectStartDateOfAddEducation.value;
+        selectStartDateOfEducation.forEach((ele)=>{
+            ele.innerHTML = selectStartDateOfAddEducation.value;
+        })
     });
-
     selectEndDateOfAddEducation.addEventListener('input',()=>{
-        selectEndDateOfEducation.innerHTML = selectEndDateOfAddEducation.value;
+        selectEndDateOfEducation.forEach((ele)=>{
+            ele.innerHTML = selectEndDateOfAddEducation.value;
+        })
     });  
     selectJobTitleValueOfEducation.addEventListener('input', ()=>{
-        selectSDEAtAmazonEducation.innerHTML = selectJobTitleValueOfEducation.value;
+        selectSDEAtAmazonEducation.forEach((ele)=>{
+            ele.innerHTML = selectJobTitleValueOfEducation.value;
+        })
     });
     selectEmployerOfEducation.addEventListener('input', ()=>{
-        selectSDEEducation.innerHTML = selectEmployerOfEducation.value;
+        selectSDEEducation.forEach((ele)=>{
+            ele.innerHTML = selectEmployerOfEducation.value;
+        })
     });
     selectEducationDescription.addEventListener('input', ()=>{
-        selectcanWritingAnythingEducation.innerHTML = selectEducationDescription.value; 
+        selectcanWritingAnythingEducation.forEach((ele)=>{
+            ele.innerHTML = selectEducationDescription.value;
+        }) 
     });
 });
 /* add education button end */

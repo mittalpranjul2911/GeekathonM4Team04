@@ -136,11 +136,12 @@ body{
     box-shadow: 0 0 2px grey;
     /* border: 2px solid red; */
     width: 48%;
-    margin-left: 12rem;
 }
 
 /* brown start */
 .brown_color_box{
+    width: 142.5%;
+    padding-left: 13rem;
     color: #ffffff;
     height: 100px;
     background-color: brown;
@@ -180,12 +181,10 @@ body{
     font-size: 13px;
 }
 #showOne{
-    margin-left: 200px;
-    width: 48%;
+    width: 67%;
 }
 #showTwo{
-    margin-left: 200px;
-    width: 48%;
+    width: 67%;
 }
 /* skill end */
 
@@ -193,14 +192,14 @@ body{
 #showOne .summary_back_color{
     background-color: white;
     border: 1px solid green;
-    width: 70%;
+    width: 142.5%;
     border: none;
     padding: 1rem 0rem 0rem 1rem;
 }
 #showTwo .summary_back_color{
     background-color: white;
     border: 1px solid green;
-    width: 58.3%;
+    width: 100%;
     border: none;
     padding: 1rem 0rem 0rem 1rem;
 }
@@ -231,22 +230,22 @@ body{
     font-size: 14px;
     display:flex;
 }
-#start_Date{
-    font-size: 14px;
-    margin-right: 1rem;
+.flex_data .start_Date{
+    padding-right: 0.5rem;
 }
-#end_Date{
-    font-size: 14px;
-    margin-right: 1rem;
+.flex_data .end_Date{
+    margin-right: 28rem;
+}
+#showOne .PhoneEmailLoca{
+    margin-left: 5rem;
 }
 #showOne .brown_color_box{
+    width: 142.5%;
+    /* justify-content: space-between; */
     display: flex;
     color: #ffffff;
     height: 100px;
     background-color: brown;
-}
-#showOne .PhoneEmailLoca{
-    margin-left: 16rem;
 }
 #showOne .skillAndSummarypart{
     display: flex;
@@ -254,7 +253,7 @@ body{
 }
 #showTwo .skillAndSummarypart{
     display: flex;
-    width: 124.8%;
+    width: 142.5%;
 }
 .skill_back_color{
     /* border: 1px solid blue; */
@@ -276,13 +275,13 @@ body{
     font-size: 14px;
     display:flex;
 }
-#start_Date_project{
+.start_Date_project{
     font-size: 14px;
-    margin-right: 1rem;
+    padding-right: 0.5rem;
 }
-#end_Date_project{
+.end_Date_project{
     font-size: 14px;
-    margin-right: 1rem;
+    margin-right: 28rem;
 }
 /* project container end */
 
@@ -302,13 +301,13 @@ body{
     font-size: 14px;
     display:flex;
 }
-#start_Date_education{
+.start_Date_education{
     font-size: 14px;
-    margin-right: 1rem;
+    padding-right: 0.5rem;
 }
-#end_Date_education{
+.end_Date_education{
     font-size: 14px;
-    margin-right: 1rem;
+    margin-right: 28rem;
 }
 /* education container start */
 
@@ -320,13 +319,13 @@ body{
 .add_employee{
     margin-top: 1.2rem;
 }
-.start_date_add_employee{
+#start_date_add_employee{
     margin-block: 5px;
     padding: 4px;
     border: none;
     width: 100%;
 }
-.end_date_add_employee{
+#end_date_add_employee{
     margin-block: 0.3rem;
     padding: 4px;
     border: none;
@@ -362,13 +361,13 @@ body{
 /* input date add employment end */
 
 /* input date add project start */
-.start_date_add_project{
+#start_date_add_project{
     margin-block: 5px;
     padding: 4px;
     border: none;
     width: 100%;
 }
-.end_date_add_project{
+#end_date_add_project{
     margin-block: 0.3rem;
     padding: 4px;
     border: none;
@@ -397,13 +396,13 @@ body{
 /* input date add project end */
 
 /* add education start */
-.start_date_add_education{
+#start_date_add_education{
     margin-block: 5px;
     padding: 4px;
     border: none;
     width: 100%;
 }
-.end_date_add_education{
+#end_date_add_education{
     margin-block: 0.3rem;
     padding: 4px;
     border: none;
