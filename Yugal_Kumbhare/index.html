@@ -27,7 +27,7 @@
                 <select name="" id="select_two_items" >
                     <!-- <option value="Zero" selected>Select Option</option> -->
                     <option value="Two">Two-Column</option>
-                    <option value="One">Minimalist </option>
+                    <option selected value="One">Minimalist </option>
                 </select><br><br>
                 <label for="" class="header_color">Header Color</label><br>
                 <input type="color" name="" class="colorid" value="#A52A2A"><br><br>
@@ -56,9 +56,9 @@
                 <button class="add_employee">Add Employment</button>
                 <div class="add_employee_form">
                     <!-- <label>Start</label>
-                    <input type="date" class="start_date_add_employee">
+                    <input type="date" id="start_date_add_employee">
                     <label>End</label>
-                    <input type="date" class="end_date_add_employee">
+                    <input type="date" id="end_date_add_employee">
                     <input type="text" id="job_title_employeement" placeholder="job Title">
                     <input type="text" id="employer_employeement" placeholder="Employer">
                     <textarea id="employment_description" cols="40" rows="8" placeholder="Description"></textarea> -->
@@ -69,9 +69,9 @@
                 <button class="add_project">Add Project</button>
                 <div class="add_project_form">
                     <!-- <label>Start</label>
-                    <input type="date" class="start_date_add_project">
+                    <input type="date" id="start_date_add_project">
                     <label>End</label>
-                    <input type="date" class="end_date_add_project">
+                    <input type="date" id="end_date_add_project">
                     <input type="text" id="project_title" placeholder="Project Title">
                     <textarea id="project_description" cols="40" rows="8" placeholder="Description"></textarea> -->
                 </div>
@@ -82,9 +82,9 @@
                 <button class="add_education">Add Education</button>
                 <div class="add_education_form">
                     <!-- <label>Start</label>
-                    <input type="date" class="start_date_add_education">
+                    <input type="date" id="start_date_add_education">
                     <label>End</label>
-                    <input type="date" class="end_date_add_education">
+                    <input type="date" id="end_date_add_education">
                     <input type="text" id="education_qualification" placeholder="Qualification">
                     <input type="text" id="education_school" placeholder="School/College">
                     <textarea id="education_description" cols="40" rows="8" placeholder="Description"></textarea> -->
@@ -134,8 +134,8 @@
                                         <li class="pasteText_job_title_employeement">SDE at Amazon</li>
                                     </ul> 
                                     <span>
-                                        <span id="start_Date">11-04-2023</span>
-                                        <span id="end_Date">11-04-2023</span>
+                                        <span class="start_Date">11-04-2023</span>
+                                        <span class="end_Date">11-04-2023</span>
                                     </span>
                                 </div><br>
                                 <label class="pasteText_employer">SDE</label><br><br>
@@ -195,7 +195,7 @@
                         <!-- PROFESSIONAL EXPERIENCE container start -->
                         <h3 class="font_size_increase">PROFESSIONAL EXPERIENCE</h3>
                         <hr class="summary_hr_size_increase">
-                        <div class="profess_experience_summary_showTwo">
+                        <div class="profess_experience_summary">
                             <!-- <div class="flex_data">
                                 <ul>
                                     <li class="pasteText_job_title_employeement">SDE at Amazon</li>
