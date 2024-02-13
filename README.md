@@ -1,12 +1,9 @@
 # Geekster Module 4 Geekathon02 by Team 4
 ## Project Information
 
-## Hosted Link:
- + [Amazon.in Website User Interface Clone](https://vipuldamre26.github.io/GeekathonM4Team04/)
 
 ## Features
  1. Mobile/Tablet friendly Responsive UI
- 2. [Google Translate](https://translate.google.co.in/)
  3. Interactive components using Javascript
  4. flexible design using CSS3 Grids & flexbox
 
@@ -15,7 +12,6 @@
 2. [CSS3](https://en.wikipedia.org/wiki/CSS)
 3. [JavaScript ES6](https://en.wikipedia.org/wiki/JavaScript)
 4. [Git](https://en.wikipedia.org/wiki/Git)
-5. [AOS](https://michalsnik.github.io/aos/) - Animation on scroll
 6. [Font Awesome](https://fontawesome.com/icons)
 7. [Google Fonts](https://fonts.google.com/)
 8. [Visual Studio Code](https://code.visualstudio.com/)
